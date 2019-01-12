@@ -1,6 +1,9 @@
 ﻿/*
 
 General header File to encapsulate all slave device functions
+
+Provides routines to inteface to various devices connected to the RS485 bus.
+
  */
 
 
@@ -17,6 +20,11 @@ Universal ID function.  All slave devices will respond to this.
 */
 int getRS485SlaveID(unsigned char* returnData, unsigned  short Address);
 int changeRS485Address(unsigned short Address, unsigned short newAddress);
+/*
+to do: add functions to interface to DC motor driver slave, and Ultrasonic Measureing unit.
+
+*/
+
 
 /* **************************************************************************************************
 
