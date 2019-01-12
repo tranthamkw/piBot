@@ -1,0 +1,20 @@
+piBoard4 is a IO board connecting to the Raspi GPIO port to various devices.  There are six main uses/port extensions.
+
+1. RS485.  All remote sensors and motor/servo controllers are controlled through this bus.
+Raspi GPIO pins used: WPi0, UART_Rx, UART_Tx
+
+2. SPI ports. Two CFAF128x128 TFT displays connect to the SPI ports.
+Raspi GPIO pints used: MOSI=SPIDAT, SCLK=SPICLK, CE0, CE1
+
+3. General Purpose Digital IO. (later expansion?)
+WPi4, WPi4, WPi1, WPi3
+
+4. General purpose I2C port (later expansion?)
+SDA1,SCL1,SDA0,SCL0
+
+5. General purpose SPI. Extens the above and adds MISO
+
+6. POWER.  +5, and ground.  Power to the pi is supplied through this board, not the mini usb.
+
+
+See schematics for more details.
