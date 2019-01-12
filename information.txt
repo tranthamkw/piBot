@@ -1,0 +1,4 @@
+bottom directory.
+
+/piBoard4 has code needed for hardware IO 
+TODO: add code to RS485Devices to control DC motor module and USM module.
