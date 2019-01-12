@@ -1,6 +1,8 @@
 /*
 
-KENBOARD electrical layer for wiring Pi interface to RaspPi GPIO. See schematics
+lowest layer for wiring Pi interface to RaspPi GPIO. See schematics.
+
+Provides basic UART communication with RS485. RS485Devices uses this to send specifically formated data to various devices on the network
 
 MODBUS RTU LAYER::
 	uses Modbus 16 communcation protocal .  Modbus specifies how data is organized
