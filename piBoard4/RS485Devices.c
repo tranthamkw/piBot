@@ -8,7 +8,7 @@
 #include "piBoard.h"
 #include <math.h>
 
-
+// this function only called when debugging. 
 void printHexData(unsigned char* buff, unsigned short len){
 	unsigned short i;
 	for (i=0;i<len;i++){
