@@ -1,5 +1,10 @@
 /*
 
+this libary is similar in nature (almost identical)
+to the wiringPi SPI library.
+
+The minor change is the  data read/write function, a second variable was added.
+
  */
 
 #include <stdio.h>

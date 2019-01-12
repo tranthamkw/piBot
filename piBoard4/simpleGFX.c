@@ -8,8 +8,9 @@ unsigned char pixelBuffer[24576];
 	128 lines (y-coordinate) * 128 columns (x-coordinate) * 1.5 bytes per pixel = 24576
 
 4 bits per color so 12 bits of information per pixel
-image is manipulated in pixelBuffer, then send pixel information in cfaf128.c one, complete line at at time.
-pixelBuffer is char, so holds two of the three R, G, B values needed for a  pixel. Algorithm depends on if the pixel x value is even or odd.
+image is manipulated in pixelBuffer, then we send pixel information to cfaf128.c one complete line at at time.
+pixelBuffer is char array, so holds two of the three R, G, B values needed for a  pixel.
+Algorithm depends on if the pixel x value is even or odd.
 
 Let Line# =0 (y=0)
 
@@ -128,17 +129,18 @@ short loadBMP(char * filename){
 	fclose(in);
 
 return loaded;
-
-
 }
 
 void initDisplay(unsigned char chan){
 	    initLCD(chan);
 }
 
+
 void updateDisplay(unsigned char chan){
     displayPixels(pixelBuffer, 0, 128, chan);
 }
+
+// many of the simple graphics operations are adapted from an Adafruit library that uses an Ardruino to drive a similar display
 
 void drawBox(short x1, short y1, short x2, short y2, unsigned short color){
 	unsigned char i,j;
@@ -277,7 +279,7 @@ void writeText(unsigned char x0,unsigned char y0, char* c, char length, unsigned
 
 void printLine(unsigned char row, char* c, char length, unsigned short fcolor, unsigned short bcolor,unsigned char chan){
 	/*
-		fast clear bottom line and write a string. 
+		fast clear a line and write a string. 
 	*/
 	unsigned short k,x,y;
 	char red, green, blue;

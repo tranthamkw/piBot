@@ -1,6 +1,13 @@
 /* 
  * File:   simpleGFX.h
  * Author: tranthamkw
+
+simple graphics manipulation.  
+
+manipulates a local pixel array. This is pushes to one of two TFT displays over SPI
+
+
+
  *
  * Created on June 30, 2018, 7:10 PM
  */
@@ -9,9 +16,7 @@
 
 
 void initDisplay(unsigned char chan);// only sets up communication. nothing else
-
 short loadBMP(char* filename);// reads in 128x128x24bit into pixelArray buffer, reduces color depth to 12bit
-
 void updateDisplay(unsigned char chan);// pushes pixelArray buffer to display.
 
 //drawing tools. Works on pixelArray buffer.  UpdateDisplay needs to be called to actually effect the changes.
@@ -21,11 +26,10 @@ void drawCircle(short x0, short y0, short r, unsigned short color);
 void drawLine(short x0, short y0, short x1, short y1, unsigned short color);
 void setPixel (short x0, short y0, unsigned short color);
 void writeText(unsigned char x0,unsigned char y0, char* c, char length, unsigned short fcolor);
-
 void charToHex (unsigned int value, char *result, char numPos );
 
 
-//quickly manipulates only rows row to 9+row and pushes text to display.
+//quickly manipulates only rows: row to 9+row and pushes text to display.
 void printLine(unsigned char row, char* c, char length, unsigned short fcolor, unsigned short bcolor, unsigned char chan);
 
 

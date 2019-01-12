@@ -28,13 +28,15 @@
 
 #define SPI_SPEED 10000000
 // Defines for piBoard V4 (RASPI_Robot)
+
 // for display #1
 //#define LCD_DC 24
 //#define LCD_RST 22
+
 // for display #0
 #define LCD_DC 25
 #define LCD_RST 23
-// for display #1, just subtract 1
+// So, for display #1, just subtract 1
 
 void SPI_sendCommand(unsigned char command, unsigned char chan)
   {
@@ -246,11 +248,8 @@ void fillLCD(unsigned short bcolor, unsigned char chan)  {
 void displayPixels(char* pixels, unsigned char y1, unsigned char y2,unsigned char chan){
 
 	/*	writes one entire row (y=constant) to display buffer at a time from "pixels" array.
-
 	We can make this faster by only re-writing y1 to y2, knowing that is all that has changed. 
-
 	Pass y1=0 y2=128 for full refresh.
-
 	12 bits per pixel
 	*/
 

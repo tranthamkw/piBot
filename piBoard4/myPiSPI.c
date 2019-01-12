@@ -61,11 +61,13 @@ int myPiSPIGetFd (int channel)
 
 
 /*
- * wiringPiSPIDataRW:
+ * ORIGINAL: wiringPiSPIDataRW:
  *	Write and Read a block of data over the SPI bus.
  *	Note the data ia being read into the transmit buffer, so will
- *	overwrite it!
- *	This is also a full-duplex operation.
+ *	overwrite it! 	This is also a full-duplex operation.
+
+ADDED A SECOND VARIABLE SO THAT THE DATA IS NOT OVERWRITTEN.
+
  *********************************************************************************
  */
 
