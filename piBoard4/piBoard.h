@@ -17,7 +17,7 @@ MODBUS RTU LAYER::
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
-#include <mcp3004.h>
+#include <mcp3004.h>// ADC connected to MCP3004 chip. This circuit does not exist on the piBoard4. Do not Call getADC.
 #include <wiringPi.h>
 #include <wiringSerial.h>
 
@@ -25,7 +25,7 @@ int initializeBoard();
 //wiring pi setup , initialyze global variables
 int closeBoard();
 
-int getADC(unsigned short chan, unsigned int * returndata);
+int getADC(unsigned short chan, unsigned int * returndata);  // not functioning on piBoard4
 // uses MCP3008 ADC conected to SPI channel 0.
 void delay_uS(int x);
 
