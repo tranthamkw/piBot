@@ -13,8 +13,8 @@ quicky program to test new code ..
 
  */
 int main(int argc, char **argv) {
-	unsigned char dir,brake,speed;
-	unsigned int value,k;
+	unsigned int dir,brake,speed;
+	unsigned int value,temp,k;
 	initializeBoard();
 
 if (argc==4){
@@ -28,13 +28,13 @@ if (argc==4){
 } else {
 
 
-	for (speed =0; speed < 256; speed+=8){
+	for (speed=0; speed < 256; speed+=8){
 		setLMD18200Status(0xC1, 0, 0, speed);
 		value=0;
 
 		for (k=0;k<10;k++){
-			getLMD18200Current(0xC1,&value);
-			value+=value;
+			getLMD18200Current(0xC1,&temp);
+			value+=temp;
 			delay(10);
 		}
 		printf("Speed %d\t current %d\n",speed,value);
