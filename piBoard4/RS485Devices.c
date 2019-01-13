@@ -113,6 +113,15 @@ int setLMD18200Status(unsigned short address, unsigned char brake, unsigned char
 	return status;
 }
 
+int getLMD18200Current(unsigned short address, unsigned int* current){
+	unsigned int temp;
+	int status;
+	status = read_Modbus_RTU(address,BASEREGLMD18200+16,&temp);
+	*current =temp;
+	return status;
+}
+
+
 int moveRS485StepperMotor(unsigned short chan, unsigned short steps, unsigned char dir){
 	int status;
 	unsigned short command;

@@ -32,6 +32,7 @@ to do: add functions to interface to DC motor driver slave, and Ultrasonic Measu
 */
 
 int setLMD18200Status(unsigned short address, unsigned char brake, unsigned char dir, unsigned char speed);
+int getLMD18200Current(unsigned short address, unsigned int* current);
 
 /* **************************************************************************************************
 
