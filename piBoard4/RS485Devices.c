@@ -108,8 +108,8 @@ return status;
 int setLMD18200Status(unsigned short address, unsigned char brake, unsigned char dir, unsigned char speed){
 	int status;
 	unsigned short command;
-	command = (((brake<<1)|dir)<<4)|speed);
-	status=write_Modbus_RTU(chan,BASEREGSTEPMTR, command);
+	command = ((((brake<<1)|dir)<<8)|speed);
+	status=write_Modbus_RTU(address,BASEREGLMD18200, command);
 	return status;
 }
 

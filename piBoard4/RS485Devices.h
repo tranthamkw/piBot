@@ -9,6 +9,7 @@ Provides routines to inteface to various devices connected to the RS485 bus.
 
 #define BASEREGANLG 0x0D0D
 #define BASEREGSERVO 0x0A0A
+#define BASEREGLMD18200 0x0A1A
 #define BASEREG485BRIDGE232 0x0C0C
 #define BASEREGSTEPMTR 0x0B0B
 #define BASEREGFN 0x00F0
