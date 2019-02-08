@@ -253,14 +253,14 @@ void write_rs485BYTE(unsigned char* cmd, unsigned int numchar, unsigned char* ps
 	loop=0;
 	j=0;
 	do {
-		delay(100);
+		delay(20);
 		i=0;
 		while (serialDataAvail(fd)){
 		    while (serialDataAvail (fd)){
 			pszEcho[i]=serialGetchar(fd);
 			i++;
 	    		}
-		delay(50);
+		delay(20);
 		}
 		if (i>0) loop=100;
 		loop++; j++;
