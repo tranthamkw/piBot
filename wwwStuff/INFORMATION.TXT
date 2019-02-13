@@ -5,5 +5,5 @@ the files in this directory are copied from /var/www/html/ on the raspi.
 
 They are here in the /piBot/ just for the purposes of documenting and backup with git
 
-
+the main control page is http://($IP_address)/botControl.html
 
