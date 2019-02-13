@@ -1,0 +1,9 @@
+
+the files in this directory are copied from /var/www/html/ on the raspi.
+
+/var/www/html/ is the default location for the apache and php servers.  These files must be copied to this diretory to work.
+
+They are here in the /piBot/ just for the purposes of documenting and backup with git
+
+
+
