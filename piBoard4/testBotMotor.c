@@ -7,6 +7,8 @@
 
 #define MOTOR0 0xA0
 #define MOTOR1 0xA1
+#define BATTERY_MONITOR 0xC1
+#define MAXVOLTS 29.2
 
 /*
 
@@ -18,6 +20,8 @@ int main(int argc, char **argv) {
 	unsigned int dir1,dir0,brake,speed1,speed0;
 	unsigned int value,temp,k;
 	unsigned int speed,dircode;
+	float volts,stdev;
+
 	initializeBoard();
 
 brake=0;
@@ -35,7 +39,8 @@ if (argc==3){
 	speed = atoi(argv[1]);
 	if (speed>255) speed=255;
 	dircode=atoi(argv[2]);
-printf("speed: %d\tdirection: %d\n",speed,dircode);
+   printf("speed: %d\ndirection: %d\n",speed,dircode);
+	fflush(stdout);
 	switch (dircode){
 		case 8: // move straight ahead
 			speed0=speed;
@@ -87,7 +92,8 @@ printf("speed: %d\tdirection: %d\n",speed,dircode);
 	} // end switch
 	setLMD18200Status(MOTOR0, brake, dir0, speed0);
 	setLMD18200Status(MOTOR1, brake, dir1, speed1);
-
+	readRS485AnalogRecorder(BATTERY_MONITOR,3,MAXVOLTS,&volts,&stdev);
+	printf("volts %2.2f +/- %1.2f\n",volts,stdev);
 
 } else {
 printf("Usage: ./testBotMotor <m1dir> <m1speed> <m2dir> <m2speed>\n");
