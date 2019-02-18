@@ -59,9 +59,10 @@ function test_input($data){
 	if (!preg_match("/^[1-9 0-9]*$/",$speed)){
 	echo "invalid speed number";
 	} else {
+	echo "<pre>";
 	if (isset($_POST['forward'])){
 		// go forward
-		echo "forward";
+		echo "forward\n";
 		$a=popen("/home/pi/piBot/piBoard4/botControlScript.sh '".$speed."' 8",'r');
 		while($b=fgets($a,32)){
 			echo $b;
@@ -79,10 +80,10 @@ function test_input($data){
 			flush();
 		}
 		pclose($a);
-		echo "stop";
+		echo "stop\n";
 
 	} else if (isset($_POST['backward'])){
-		echo "backward";
+		echo "backward\n";
 		$a=popen("/home/pi/piBot/piBoard4/botControlScript.sh '".$speed."' 2",'r');
 		while($b=fgets($a,32)){
 			echo $b;
@@ -91,7 +92,7 @@ function test_input($data){
 		}
 		pclose($a);
 	} else if (isset($_POST['setAngle'])){
-		echo "Set Angle";
+		echo "Set Angle\n";
 		$a=popen("/home/pi/piBot/piBoard4/setAngleScript.sh '".$angle."'",'r');
 		while($b=fgets($a,32)){
 			echo $b;
@@ -101,7 +102,7 @@ function test_input($data){
 		pclose($a);
 
 	} else if (isset($_POST['left'])){
-		echo "vere left";
+		echo "vere left\n";
 		$a=popen("/home/pi/piBot/piBoard4/botControlScript.sh '".$speed."' 7",'r');
 		while($b=fgets($a,32)){
 			echo $b;
@@ -111,7 +112,7 @@ function test_input($data){
 		pclose($a);
 
 	} else if (isset($_POST['right'])){
-		echo "vere right";
+		echo "vere right\n";
 		$a=popen("/home/pi/piBot/piBoard4/botControlScript.sh '".$speed."' 9",'r');
 		while($b=fgets($a,32)){
 			echo $b;
@@ -122,7 +123,7 @@ function test_input($data){
 
 
 	} else if (isset($_POST['turnright'])){
-		echo "turn right";
+		echo "turn right\n";
 		$a=popen("/home/pi/piBot/piBoard4/botControlScript.sh '".$speed."' 6",'r');
 		while($b=fgets($a,32)){
 			echo $b;
@@ -132,7 +133,7 @@ function test_input($data){
 		pclose($a);
 
 	} else if (isset($_POST['turnleft'])){
-		echo "turn left";
+		echo "turn left\n";
 		$a=popen("/home/pi/piBot/piBoard4/botControlScript.sh '".$speed."' 4",'r');
 		while($b=fgets($a,32)){
 			echo $b;
@@ -142,6 +143,7 @@ function test_input($data){
 		pclose($a);
 
 	}
+	echo "</pre>\n";
 }
 
 	?>

@@ -30,13 +30,14 @@ unsigned short length,x0,y0,chan;
 if (argc==3){
 
 	strcpy(data, argv[1]);
-	chan = atoi(argv[2]);
-	initDisplay(chan);
-//	initDisplay(1);
+	initDisplay(0);
+	if(loadBMP(data)) updateDisplay(0);
+	strcpy(data, argv[2]);
+	initDisplay(1);
+	if(loadBMP(data)) updateDisplay(1);
 
-	if(loadBMP(data)) updateDisplay(chan);
 }else{
-printf("usage sudo ./showBMP <bmpfile> <display 0,1>\n");
+printf("usage sudo ./showBMP <bmpfile0> <bmpfile1>\n");
 }
 
 
