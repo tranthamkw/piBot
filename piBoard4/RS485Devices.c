@@ -204,6 +204,14 @@ int getRS485ServoPosition(unsigned short chan, unsigned short servo, unsigned in
 	return status;
 }
 
+int getRS485USMdistance(unsigned short chan, unsigned int* tof){
+	int status;
+	unsigned int temp;
+	status = read_Modbus_RTU(chan,BASEREGSERVO+4, &temp);
+	*tof = temp;
+	return status;
+}
+
 int setRS485DigitalOut(unsigned short chan, unsigned short value){
 /*
 	two outputs: Out1 = value & 0x01, Out2 = (value & 0x02) >>1

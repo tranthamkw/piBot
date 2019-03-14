@@ -5,10 +5,7 @@
 #include "piBoard.h"
 #include "RS485Devices.h"
 
-#define MOTOR0 0xA0
-#define MOTOR1 0xA1
-#define BATTERY_MONITOR 0xC1
-#define MAXVOLTS 29.2
+#include "botDefines.h"
 
 /*
 

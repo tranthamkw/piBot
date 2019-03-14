@@ -59,6 +59,16 @@ Dual servo slave module:
 */
 int setRS485ServoPosition(unsigned short chan, unsigned short servo, unsigned short position);
 int getRS485ServoPosition(unsigned short chan, unsigned short servo, unsigned int* position);
+
+/*
+the Ultra-Sonic Measurment unit also have a servo attached. the position of the servo through above functions.
+
+to retreive the distance measurment:
+*/
+
+int getRS485USMdistance(unsigned short chan, unsigned int* tof);
+//returns the time of flight in units of of 4uS for echo to return.  to convert to distance in cm : d = 2*34/1000
+
 /* **************************************************************************************************
 
 Digital out module
