@@ -12,49 +12,40 @@ quicky program to test new code ..
  */
 int main(int argc, char **argv) {
 
-
-	unsigned int value;
+	unsigned int value,position,numpings;
 	int status, i;
-	unsigned int distance[9];
+	unsigned int sumvalue;
+	unsigned int distance;
 
-for (i=0;i<9;i++){
-	distance[i]=0;
-}
-printf("Measuring ...\n");
+	distance=0;
+	sumvalue=0;
 
-	initializeBoard();
+	if (argc == 3) {
+			position = atoi(argv[1]);
+			numpings = atoi(argv[2]);
+			printf("Measuring %d times...\n",numpings);
 
-	for (i=4;i>=0;i--){
-		setRS485ServoPosition(USM,0,i);
-		status = getRS485USMdistance(USM,&value);
-		if (status) value=0;
-		distance[i]+=value*34/500;
-		delay(20);
-}
-	for (i=0;i<9;i++){
-		setRS485ServoPosition(USM,0,i);
-		status = getRS485USMdistance(USM,&value);
-		if (status) value=0;
-		distance[i]+=value*34/500;
-		delay(20);
+			if (numpings<1) numpings=1;
+			if (position>8) position=8;
+			initializeBoard();
+
+			setRS485ServoPosition(USM,0,position);
+			delay(50);
+			for (i=0;i<numpings;i++){
+				status = getRS485USMdistance(USM,&value);
+				if (status) value=0;
+				sumvalue+=value;
+				delay(2);
+			}
+
+		distance=sumvalue*34/(500*numpings);
+	printf("angle\t%d\t\tdistance\t%d cm\n",position,distance);
+
+	} else {
+		printf("usage: sudo ./getUSMDistance <angle 0..8> <numpings 1 ... >\n");
 	}
-	for (i=8;i>4;i--){
-		setRS485ServoPosition(USM,0,i);
-		status = getRS485USMdistance(USM,&value);
-		if (status) value=0;
-		distance[i]+=value*34/500;
-		delay(20);
-}
 
-printf("angle\td(cm)\n");
-
-for (i=0;i<9;i++){
-	printf("%d\t%d\n",i,(distance[i]/2));
-}
-printf("\n");
-
-//return to position 4
-//		setRS485ServoPosition(USM,0,4);
+	printf("\n");
 
 return 0;
 

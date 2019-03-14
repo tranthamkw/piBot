@@ -1,0 +1,3 @@
+/home/pi/piBot/objTracker/CMakeFiles/rebuild_cache.dir
+/home/pi/piBot/objTracker/CMakeFiles/edit_cache.dir
+/home/pi/piBot/objTracker/CMakeFiles/objTracker.dir
