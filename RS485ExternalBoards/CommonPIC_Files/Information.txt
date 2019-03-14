@@ -1,0 +1,4 @@
+files common to all boards
+must be included in project when compiling and programing PIC microcontrollers
+
+use MPLAB IDE v8.46
