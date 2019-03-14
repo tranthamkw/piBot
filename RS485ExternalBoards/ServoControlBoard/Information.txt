@@ -1,0 +1,3 @@
+servo control board for both:
+A) Ultrasonic ranging angle
+B) web cam angle
