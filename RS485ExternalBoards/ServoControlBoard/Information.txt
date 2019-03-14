@@ -1,3 +1,6 @@
 servo control board for both:
 A) Ultrasonic ranging angle
 B) web cam angle
+
+
+uses version 2 RS485 boards
