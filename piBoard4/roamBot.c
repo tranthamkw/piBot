@@ -33,7 +33,7 @@ int main(int argc, char **argv) {
 	initializeBoard();
 
 	brake=0;
-	speed=82;
+	speed=70;
 	usmAngle=5;
 	setRS485ServoPosition(USM,0,usmAngle);
 	frontD = measureDistance(0);
@@ -43,23 +43,20 @@ while (frontD > 30){
 	frontD = measureDistance(0);
 	rightD = measureDistance(1);
 	leftD = measureDistance(2);
-	printf("LEFT:%d cm \t\tFRONT:%d cm\t\tRIGHT:%d cm\n",leftD,frontD,rightD);
+	printf("mode: %d\tLEFT:%d cm\tFRONT:%d cm\tRIGHT:%d cm\n",mode,leftD,frontD,rightD);
 	fflush(stdout);
 
 	if ((mode>3)&(frontD > 80)) { // moving forward and frontD>80
-			if ((leftD+rightD)>80) {
+			if ((leftD+rightD)>200) {
 				mode = 4;// move forward
-				if (leftD<40) mode =5; //vere right
-				if (rightD<40) mode = 6; //vere left
+				if (leftD<95) mode =5; //vere right
+				if (rightD<95) mode = 6; //vere left
 			}else{ // between two walls.  Try to even the distance between
 				if (leftD>rightD){mode = 5;}else{mode = 6;}
 			}
 		} else {
-		if (frontD>90){
-			mode = 4;
-			}else{
-			if (mode>3)	if (leftD>rightD){mode = 2;} else {mode = 1;}
-			}
+
+
 	}
 
 	if (frontD<30) mode =0;//force bot to stop and then exit program
