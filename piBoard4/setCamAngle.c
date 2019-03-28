@@ -23,8 +23,15 @@ if (argc==2){
 	value = atoi(argv[1]);  // 0 to 8
 	setRS485ServoPosition(CAMERASERVO,0,value);
 
+
 	readRS485AnalogRecorder(BATTERY_MONITOR,3,MAXVOLTS,&volts,&stdev);
 	printf("volts %2.2f +/- %1.2f\n",volts,stdev);
+//	readRS485AnalogRecorderSimple(BATTERY_MONITOR,3,&volts);
+//	volts = volts * MAXVOLTS/1024.0;
+//	printf("volts %2.2f +/- %1.2f\n",volts,stdev);
+
+
+
 
 } else {
 

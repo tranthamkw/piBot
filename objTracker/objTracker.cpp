@@ -122,7 +122,7 @@ int main(int argc, char* argv[]) {
     sumLX = 0;
     sumLY = 0;
     sumRX = 0;
-    sumRY - 0;
+    sumRY = 0;
     
     dist = menu();
   }
