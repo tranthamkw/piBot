@@ -6,15 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/piBot/objTracker/objTracker.cpp
+/home/pi/piBot/followBlob/RS485Devices.h
+
+/home/pi/piBot/followBlob/botDefines.h
+
+/home/pi/piBot/followBlob/followBlob.cpp
 opencv2/imgcodecs.hpp
-/home/pi/piBot/objTracker/opencv2/imgcodecs.hpp
+/home/pi/piBot/followBlob/opencv2/imgcodecs.hpp
 opencv2/imgproc.hpp
-/home/pi/piBot/objTracker/opencv2/imgproc.hpp
+/home/pi/piBot/followBlob/opencv2/imgproc.hpp
 opencv2/highgui.hpp
-/home/pi/piBot/objTracker/opencv2/highgui.hpp
+/home/pi/piBot/followBlob/opencv2/highgui.hpp
 opencv2/opencv.hpp
-/home/pi/piBot/objTracker/opencv2/opencv.hpp
+/home/pi/piBot/followBlob/opencv2/opencv.hpp
+piBoard.h
+/home/pi/piBot/followBlob/piBoard.h
+RS485Devices.h
+/home/pi/piBot/followBlob/RS485Devices.h
+botDefines.h
+/home/pi/piBot/followBlob/botDefines.h
 vector
 -
 iostream
@@ -22,6 +32,24 @@ iostream
 fstream
 -
 string
+-
+math.h
+-
+
+/home/pi/piBot/followBlob/piBoard.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+errno.h
+-
+mcp3004.h
+-
+wiringPi.h
+-
+wiringSerial.h
 -
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp

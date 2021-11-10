@@ -89,8 +89,6 @@ if (argc==3){
 	} // end switch
 	setLMD18200Status(MOTOR0, brake, dir0, speed0);
 	setLMD18200Status(MOTOR1, brake, dir1, speed1);
-	readRS485AnalogRecorder(BATTERY_MONITOR,3,MAXVOLTS,&volts,&stdev);
-	printf("volts %2.2f +/- %1.2f\n",volts,stdev);
 
 } else {
 printf("Usage: ./testBotMotor <m1dir> <m1speed> <m2dir> <m2speed>\n");

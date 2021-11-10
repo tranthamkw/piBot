@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/piBot/objTracker
+CMAKE_SOURCE_DIR = /home/pi/piBot/followBlob
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/piBot/objTracker
+CMAKE_BINARY_DIR = /home/pi/piBot/followBlob
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/piBot/objTracker/CMakeFiles /home/pi/piBot/objTracker/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/piBot/followBlob/CMakeFiles /home/pi/piBot/followBlob/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/piBot/objTracker/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/piBot/followBlob/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,98 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named objTracker
+# Target rules for targets named FollowBlob
 
 # Build rule for target.
-objTracker: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 objTracker
-.PHONY : objTracker
+FollowBlob: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 FollowBlob
+.PHONY : FollowBlob
 
 # fast build rule for target.
-objTracker/fast:
-	$(MAKE) -f CMakeFiles/objTracker.dir/build.make CMakeFiles/objTracker.dir/build
-.PHONY : objTracker/fast
+FollowBlob/fast:
+	$(MAKE) -f CMakeFiles/FollowBlob.dir/build.make CMakeFiles/FollowBlob.dir/build
+.PHONY : FollowBlob/fast
 
-objTracker.o: objTracker.cpp.o
+RS485Devices.o: RS485Devices.c.o
 
-.PHONY : objTracker.o
+.PHONY : RS485Devices.o
 
 # target to build an object file
-objTracker.cpp.o:
-	$(MAKE) -f CMakeFiles/objTracker.dir/build.make CMakeFiles/objTracker.dir/objTracker.cpp.o
-.PHONY : objTracker.cpp.o
+RS485Devices.c.o:
+	$(MAKE) -f CMakeFiles/FollowBlob.dir/build.make CMakeFiles/FollowBlob.dir/RS485Devices.c.o
+.PHONY : RS485Devices.c.o
 
-objTracker.i: objTracker.cpp.i
+RS485Devices.i: RS485Devices.c.i
 
-.PHONY : objTracker.i
+.PHONY : RS485Devices.i
 
 # target to preprocess a source file
-objTracker.cpp.i:
-	$(MAKE) -f CMakeFiles/objTracker.dir/build.make CMakeFiles/objTracker.dir/objTracker.cpp.i
-.PHONY : objTracker.cpp.i
+RS485Devices.c.i:
+	$(MAKE) -f CMakeFiles/FollowBlob.dir/build.make CMakeFiles/FollowBlob.dir/RS485Devices.c.i
+.PHONY : RS485Devices.c.i
 
-objTracker.s: objTracker.cpp.s
+RS485Devices.s: RS485Devices.c.s
 
-.PHONY : objTracker.s
+.PHONY : RS485Devices.s
 
 # target to generate assembly for a file
-objTracker.cpp.s:
-	$(MAKE) -f CMakeFiles/objTracker.dir/build.make CMakeFiles/objTracker.dir/objTracker.cpp.s
-.PHONY : objTracker.cpp.s
+RS485Devices.c.s:
+	$(MAKE) -f CMakeFiles/FollowBlob.dir/build.make CMakeFiles/FollowBlob.dir/RS485Devices.c.s
+.PHONY : RS485Devices.c.s
+
+followBlob.o: followBlob.cpp.o
+
+.PHONY : followBlob.o
+
+# target to build an object file
+followBlob.cpp.o:
+	$(MAKE) -f CMakeFiles/FollowBlob.dir/build.make CMakeFiles/FollowBlob.dir/followBlob.cpp.o
+.PHONY : followBlob.cpp.o
+
+followBlob.i: followBlob.cpp.i
+
+.PHONY : followBlob.i
+
+# target to preprocess a source file
+followBlob.cpp.i:
+	$(MAKE) -f CMakeFiles/FollowBlob.dir/build.make CMakeFiles/FollowBlob.dir/followBlob.cpp.i
+.PHONY : followBlob.cpp.i
+
+followBlob.s: followBlob.cpp.s
+
+.PHONY : followBlob.s
+
+# target to generate assembly for a file
+followBlob.cpp.s:
+	$(MAKE) -f CMakeFiles/FollowBlob.dir/build.make CMakeFiles/FollowBlob.dir/followBlob.cpp.s
+.PHONY : followBlob.cpp.s
+
+piBoard.o: piBoard.c.o
+
+.PHONY : piBoard.o
+
+# target to build an object file
+piBoard.c.o:
+	$(MAKE) -f CMakeFiles/FollowBlob.dir/build.make CMakeFiles/FollowBlob.dir/piBoard.c.o
+.PHONY : piBoard.c.o
+
+piBoard.i: piBoard.c.i
+
+.PHONY : piBoard.i
+
+# target to preprocess a source file
+piBoard.c.i:
+	$(MAKE) -f CMakeFiles/FollowBlob.dir/build.make CMakeFiles/FollowBlob.dir/piBoard.c.i
+.PHONY : piBoard.c.i
+
+piBoard.s: piBoard.c.s
+
+.PHONY : piBoard.s
+
+# target to generate assembly for a file
+piBoard.c.s:
+	$(MAKE) -f CMakeFiles/FollowBlob.dir/build.make CMakeFiles/FollowBlob.dir/piBoard.c.s
+.PHONY : piBoard.c.s
 
 # Help Target
 help:
@@ -158,10 +212,16 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... objTracker"
-	@echo "... objTracker.o"
-	@echo "... objTracker.i"
-	@echo "... objTracker.s"
+	@echo "... FollowBlob"
+	@echo "... RS485Devices.o"
+	@echo "... RS485Devices.i"
+	@echo "... RS485Devices.s"
+	@echo "... followBlob.o"
+	@echo "... followBlob.i"
+	@echo "... followBlob.s"
+	@echo "... piBoard.o"
+	@echo "... piBoard.i"
+	@echo "... piBoard.s"
 .PHONY : help
 
 

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/piBot/followBlob/RS485Devices.c
+RS485Devices.h
+/home/pi/piBot/followBlob/RS485Devices.h
+piBoard.h
+/home/pi/piBot/followBlob/piBoard.h
+math.h
+-
+
+/home/pi/piBot/followBlob/RS485Devices.h
+
+/home/pi/piBot/followBlob/piBoard.c
+piBoard.h
+/home/pi/piBot/followBlob/piBoard.h
+
+/home/pi/piBot/followBlob/piBoard.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+errno.h
+-
+mcp3004.h
+-
+wiringPi.h
+-
+wiringSerial.h
+-
+

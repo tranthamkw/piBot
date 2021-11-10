@@ -1,0 +1,3 @@
+/home/pi/piBot/followBlob/CMakeFiles/rebuild_cache.dir
+/home/pi/piBot/followBlob/CMakeFiles/edit_cache.dir
+/home/pi/piBot/followBlob/CMakeFiles/FollowBlob.dir

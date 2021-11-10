@@ -54,45 +54,45 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/piBot/objTracker
+CMAKE_SOURCE_DIR = /home/pi/piBot/followBlob
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/piBot/objTracker
+CMAKE_BINARY_DIR = /home/pi/piBot/followBlob
 
 #=============================================================================
-# Target rules for target CMakeFiles/objTracker.dir
+# Target rules for target CMakeFiles/FollowBlob.dir
 
 # All Build rule for target.
-CMakeFiles/objTracker.dir/all:
-	$(MAKE) -f CMakeFiles/objTracker.dir/build.make CMakeFiles/objTracker.dir/depend
-	$(MAKE) -f CMakeFiles/objTracker.dir/build.make CMakeFiles/objTracker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/piBot/objTracker/CMakeFiles --progress-num=1,2 "Built target objTracker"
-.PHONY : CMakeFiles/objTracker.dir/all
+CMakeFiles/FollowBlob.dir/all:
+	$(MAKE) -f CMakeFiles/FollowBlob.dir/build.make CMakeFiles/FollowBlob.dir/depend
+	$(MAKE) -f CMakeFiles/FollowBlob.dir/build.make CMakeFiles/FollowBlob.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/piBot/followBlob/CMakeFiles --progress-num=1,2,3,4 "Built target FollowBlob"
+.PHONY : CMakeFiles/FollowBlob.dir/all
 
 # Include target in all.
-all: CMakeFiles/objTracker.dir/all
+all: CMakeFiles/FollowBlob.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/objTracker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/piBot/objTracker/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/objTracker.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/piBot/objTracker/CMakeFiles 0
-.PHONY : CMakeFiles/objTracker.dir/rule
+CMakeFiles/FollowBlob.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/piBot/followBlob/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/FollowBlob.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/piBot/followBlob/CMakeFiles 0
+.PHONY : CMakeFiles/FollowBlob.dir/rule
 
 # Convenience name for target.
-objTracker: CMakeFiles/objTracker.dir/rule
+FollowBlob: CMakeFiles/FollowBlob.dir/rule
 
-.PHONY : objTracker
-
-# clean rule for target.
-CMakeFiles/objTracker.dir/clean:
-	$(MAKE) -f CMakeFiles/objTracker.dir/build.make CMakeFiles/objTracker.dir/clean
-.PHONY : CMakeFiles/objTracker.dir/clean
+.PHONY : FollowBlob
 
 # clean rule for target.
-clean: CMakeFiles/objTracker.dir/clean
+CMakeFiles/FollowBlob.dir/clean:
+	$(MAKE) -f CMakeFiles/FollowBlob.dir/build.make CMakeFiles/FollowBlob.dir/clean
+.PHONY : CMakeFiles/FollowBlob.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/FollowBlob.dir/clean
 
 .PHONY : clean
 
