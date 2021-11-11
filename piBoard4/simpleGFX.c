@@ -90,7 +90,8 @@ short loadBMP(char * filename){
 	printf("BitPerPixel\t%d\n",biBitCount);
 */
 	if (biBitCount!=24){
-		printf("filename %s not 24 bit per pixel\n",filename);
+
+		printf("filename %s not 24 bit per pixel. BiBitCount = %d \n",filename,biBitCount);
 		fclose(in);
 		return loaded;
 	}
