@@ -1,0 +1,13 @@
+When accessing scripts from the web page, add the script to the file /etc/sudoers
+
+
+all scripts and all programs that the scripts may call
+
+as in
+
+
+
+ALL ALL=NOPASSWD: /home/pi/piBot/piBoard4/botControlScript.sh, /home/pi/piBot/piBoard4/testBotMotor
+ALL ALL=NOPASSWD: /home/pi/piBot/piBoard4/setAngleScript.sh, /home/pi/piBot/piBoard4/setCamAngle
+ALL ALL=NOPASSWD: /home/pi/piBot/piBoard4/eyeControlScript.sh, /home/pi/piBot/piBoard4/showBMP
+ALL ALL=NOPASSWD: /home/pi/piBot/piBoard4/getBatteryStatus
