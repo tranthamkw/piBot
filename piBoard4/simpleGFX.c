@@ -63,10 +63,10 @@ short loadBMP(char * filename){
 	fread(&bfReserved1,sizeof(bfReserved1),1,in);
 	fread(&bfReserved2,sizeof(bfReserved2),1,in);
 	fread(&bfOffBits,sizeof(bfOffBits),1,in);
-/*	printf("Type\t%d\n",bfType);
+	printf("Type\t%d\n",bfType);
 	printf("Size\t%d\n",bfSize);
 	printf("OffBits\t%d\n",bfOffBits);
-*/
+
 	if (bfType!=19778) {
 		printf("filename %s not a DIB\n",filename);
 		fclose(in);
@@ -84,11 +84,11 @@ short loadBMP(char * filename){
 	fread(&biYPels,sizeof(biYPels),1,in);
 	fread(&biClrUsed,sizeof(biClrUsed),1,in);
 	fread(&biClrImportant,sizeof(biClrImportant),1,in);
-/*
+
 	printf("Width\t%d\n",biWidth);
 	printf("Height\t%d\n",biHeight);
 	printf("BitPerPixel\t%d\n",biBitCount);
-*/
+
 	if (biBitCount!=24){
 
 		printf("filename %s not 24 bit per pixel. BiBitCount = %d \n",filename,biBitCount);
@@ -106,6 +106,7 @@ short loadBMP(char * filename){
 		return loaded;
 	}
 	loaded = 1;
+	fseek(in,bfOffBits,SEEK_SET);
 	for (y=0;y<128;y++){
 	for (x=0;x<128;x++){
 		fread(&data,sizeof(data),1,in);
