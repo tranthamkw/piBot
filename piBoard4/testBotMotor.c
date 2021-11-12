@@ -81,6 +81,18 @@ if (argc==3){
 			dir0 = 1;
 			dir1 = 1;
 		break;
+		case 1: // vere back left
+			speed0=speed;
+			speed1=speed/2;
+			dir0 = 0;
+			dir1 = 0;
+		break;
+		case 3: // vere back right
+			speed0=speed/2;
+			speed1=speed;
+			dir0 = 0;
+			dir1 = 0;
+		break;
 
 	default:
 		speed0=0;
